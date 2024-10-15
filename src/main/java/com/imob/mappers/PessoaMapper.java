@@ -12,10 +12,10 @@ import java.util.List;
 public interface PessoaMapper {
 
     @Named("pessoaToPessoaEntity")
-    PessoaEntity pessoaToPessoaEntity(Pessoa pessoa);
+    PessoaEntity pessoaToPessoaEntity(Pessoa pessoa) throws Exception;
 
     @Named("pessoEntityToPessoa")
-    Pessoa pessoaEntityToPessoa(PessoaEntity pessoaEntity);
+    Pessoa pessoaEntityToPessoa(PessoaEntity pessoaEntity) throws Exception;
 
     @IterableMapping(qualifiedByName = "pessoEntityToPessoa")
     List<Pessoa> pessoEntityListToPessoaList(List<PessoaEntity> pessoas);
