@@ -1,7 +1,6 @@
-CREATE TABLE usuario (
-  cd_pessoa INTEGER AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE pessoa (
+  cd_pessoa SERIAL PRIMARY KEY,
   nm_pessoa VARCHAR(255) NOT NULL,
-  email VARCHAR(255) NOT NULL UNIQUE,
   nr_telefone_1 VARCHAR,
   nr_telefone_2 VARCHAR,
   cd_endereco INTEGER NOT NULL,
