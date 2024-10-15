@@ -26,13 +26,13 @@ public class PessoaController {
             @ApiResponse(responseCode = "200", description = "Busca efetuada com sucesso."),
             @ApiResponse(responseCode = "500", description = "Erro interno do servidor.")
     })
-    @Operation(description = "Busca por dados de maquinas agricolas dos sites indexados.")
+    @Operation(description = "Busca por pessoa cadastradas.")
     public List<Pessoa> getAll() throws Exception {
         try {
             return pessoaRepository.getAll();
         } catch (Exception e) {
             e.printStackTrace();
-            throw new Exception("Houve um erro ao buscar os dados das máquinas");
+            throw new Exception("Houve um erro ao buscar os dados das Pessoas cadastradas");
         }
     }
 
@@ -41,13 +41,13 @@ public class PessoaController {
             @ApiResponse(responseCode = "200", description = "Busca efetuada com sucesso."),
             @ApiResponse(responseCode = "500", description = "Erro interno do servidor.")
     })
-    @Operation(description = "Busca por dados de maquinas agricolas dos sites indexados.")
+    @Operation(description = "Cadastro de pessoa.")
     public Pessoa criarPessoa(@RequestBody Pessoa pessoa) throws Exception {
         try {
             return pessoaRepository.insert(pessoa);
         } catch (Exception e) {
             e.printStackTrace();
-            throw new Exception("Houve um erro ao buscar os dados das máquinas");
+            throw new Exception("Houve um erro ao cadastrar pessoa");
         }
     }
 }
