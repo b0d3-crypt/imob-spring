@@ -5,6 +5,8 @@ import com.imob.exceptions.CodigoEnderecoException;
 import com.imob.exceptions.pessoa.NomePessoaException;
 import com.imob.exceptions.pessoa.TipoPessoaException;
 
+import java.util.Objects;
+
 public class Pessoa {
     private Integer cdPessoa;
     private String nmPessoa;
@@ -82,5 +84,24 @@ public class Pessoa {
                 && tpPessoa != TpPessoaEnum.JURIDICA.getValor()) {
             throw new TipoPessoaException();
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Pessoa pessoa = (Pessoa) o;
+        return Objects.equals(cdPessoa, pessoa.cdPessoa)
+                && Objects.equals(nmPessoa, pessoa.nmPessoa)
+                && Objects.equals(nrTelefone1, pessoa.nrTelefone1)
+                && Objects.equals(nrTelefone2, pessoa.nrTelefone2)
+                && Objects.equals(cdEndereco, pessoa.cdEndereco)
+                && Objects.equals(cdArquivo, pessoa.cdArquivo)
+                && Objects.equals(tpPessoa, pessoa.tpPessoa);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(cdPessoa, nmPessoa, nrTelefone1, nrTelefone2, cdEndereco, cdArquivo, tpPessoa);
     }
 }
