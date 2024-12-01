@@ -8,5 +8,4 @@ public class WebUserDTO {
     private Integer tpResponsabilidade;
     private String token;
 
-
 }
